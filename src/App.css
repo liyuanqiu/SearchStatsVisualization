@@ -1,0 +1,595 @@
+/* App Layout */
+.app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Input Page */
+.input-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.input-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+/* JSON Input */
+.json-input {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.json-input h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.json-input textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1rem;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.85rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.json-input textarea:focus {
+  outline: 2px solid #4f46e5;
+  border-color: transparent;
+}
+
+.json-input .error {
+  color: #ef4444;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:not(.secondary) {
+  background: #4f46e5;
+  color: white;
+}
+
+button:not(.secondary):hover:not(:disabled) {
+  background: #4338ca;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid #666;
+  color: inherit;
+}
+
+button.secondary:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+/* Dashboard */
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.endpoint-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.endpoint-selector label {
+  font-weight: 500;
+}
+
+.endpoint-selector select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: inherit;
+  min-width: 300px;
+}
+
+/* Service Overview */
+.service-overview {
+  margin-bottom: 2rem;
+}
+
+.service-overview h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-container {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.chart-container.wide {
+  grid-column: span 1;
+}
+
+.chart-container h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #888;
+}
+
+/* Storage Cards */
+.storage-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.storage-card {
+  flex: 1;
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.storage-card h4 {
+  margin: 0 0 0.5rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.storage-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.storage-quota {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.percentage {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+/* Limits Section */
+.limits-section {
+  margin-top: 1.5rem;
+}
+
+.limits-section h3 {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.limits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.limit-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+.limit-label {
+  color: #888;
+}
+
+.limit-value {
+  font-weight: 600;
+}
+
+/* Index Charts */
+.index-charts {
+  margin-top: 2rem;
+}
+
+.index-charts h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(79, 70, 229, 0.05));
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.controls select {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: inherit;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+}
+
+/* Index Table */
+.index-table {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.index-table h3 {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.index-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.index-table th,
+.index-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.index-table th {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+  color: #888;
+}
+
+.index-table tr:hover td {
+  background: rgba(79, 70, 229, 0.1);
+}
+
+.index-table td:first-child {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Recharts overrides */
+.recharts-text {
+  fill: #888 !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 0.75rem;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  background: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+}
+
+.recharts-tooltip-label {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* View Tabs */
+.view-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.view-tabs .tab {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.2s;
+}
+
+.view-tabs .tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.view-tabs .tab.active {
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.1);
+  border-bottom: 2px solid #4f46e5;
+}
+
+/* All Endpoints Overview */
+.all-endpoints-overview {
+  margin-bottom: 2rem;
+}
+
+.all-endpoints-overview h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.comparison-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .comparison-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparison-charts .chart-container.wide {
+  grid-column: span 1;
+}
+
+/* Endpoints Table */
+.endpoints-table {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.endpoints-table h3 {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.endpoints-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.endpoints-table th,
+.endpoints-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.endpoints-table th {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+  color: #888;
+}
+
+.endpoints-table tr:hover td {
+  background: rgba(79, 70, 229, 0.1);
+}
+
+.endpoints-table td:first-child {
+  font-weight: 500;
+}
+
+/* Percentage status colors */
+.pct-ok {
+  color: #22c55e;
+}
+
+.pct-warning {
+  color: #f59e0b;
+}
+
+.pct-critical {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Custom tooltip */
+.custom-tooltip {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.custom-tooltip .tooltip-title {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: #fff;
+}
+
+.custom-tooltip p {
+  margin: 0.25rem 0;
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .json-input {
+    background: rgba(0, 0, 0, 0.03);
+  }
+
+  .json-input textarea {
+    background: #fff;
+    border-color: #ddd;
+    color: #333;
+  }
+
+  .chart-container {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .storage-card {
+    background: rgba(0, 0, 0, 0.03);
+  }
+
+  .endpoint-selector select,
+  .controls select {
+    background: #fff;
+    border-color: #ddd;
+  }
+
+  .recharts-default-tooltip {
+    background: #fff !important;
+    border-color: #ddd !important;
+  }
+
+  .recharts-tooltip-label {
+    color: #333 !important;
+  }
+
+  .view-tabs {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .view-tabs .tab:hover {
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .custom-tooltip {
+    background: #fff;
+    border-color: #ddd;
+  }
+
+  .custom-tooltip .tooltip-title {
+    color: #333;
+  }
+
+  .custom-tooltip p {
+    color: #666;
+  }
+}
